@@ -1,0 +1,1 @@
+{"level":"info","msg":"sqlD:/github/gin-demo/services/user.go:18966.6µsSELECT * FROM `tbl_user`  WHERE `tbl_user`.`deleted_at` IS NULL AND ((`tbl_user`.`id` = 10008)) ORDER BY `tbl_user`.`id` ASC LIMIT 1[] 1","time":"2020-02-24 20:23:34"}

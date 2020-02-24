@@ -1,0 +1,20 @@
+database:
+  addr: '192.168.1.143'
+  port: 3306
+  username: 'gin_user'
+  password: 'gin_pass'
+  dbname: 'gin_demo'
+  charset: 'utf8mb4'
+server:
+  port: 8080
+redis:
+  addr: '192.168.1.143'
+  password: ''
+  port: 6379
+  db: 2
+session:
+  network: 'tcp'
+  addr: '192.168.1.143'
+  port: 6379
+  password: ''
+  db: 1
