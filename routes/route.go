@@ -5,7 +5,6 @@ import (
 	v1 "src/routes/v1"
 )
 
-
 func Routers(router *gin.Engine) {
 	version1 := router.Group("/v1")
 	var _ = router.Group("/v2")

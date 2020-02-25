@@ -18,17 +18,17 @@ func init() {
 }
 
 func initRedis() Cache {
-	rdsConf := config.GetConfig().GetStringMapString("redis")
+	rdsConf := config.Config().GetStringMapString("redis")
 	db, _ := strconv.Atoi(rdsConf["db"])
 	cache.Client = redis.NewClient(&redis.Options{
-		Addr: fmt.Sprintf("%s:%s", rdsConf["addr"], rdsConf["port"]),
-		DB:   db,
+		Addr:     fmt.Sprintf("%s:%s", rdsConf["addr"], rdsConf["port"]),
+		DB:       db,
 		Password: rdsConf["password"],
 	})
 	return cache
 }
 
-func GetCacheClient() Cache {
+func CacheClient() Cache {
 	return cache
 }
 

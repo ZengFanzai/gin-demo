@@ -1,6 +1,8 @@
 package cache
 
-import "time"
+import (
+	"time"
+)
 
 type KeyInfo interface {
 	GetKey() string
@@ -8,7 +10,6 @@ type KeyInfo interface {
 }
 
 type UserinfoS struct {
-	KeyInfo
 	Key    string
 	Expire time.Duration
 }
@@ -26,5 +27,4 @@ var user = UserinfoS{Key: "", Expire: 1 * time.Minute}
 func UserInfo(key string) *UserinfoS {
 	user.Key = "userInfo:" + key
 	return &user
-
 }

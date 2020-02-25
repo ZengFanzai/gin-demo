@@ -31,7 +31,7 @@ func initConfig() {
 	//})
 }
 
-func GetConfig() *viper.Viper {
+func Config() *viper.Viper {
 	return conf
 }
 
@@ -46,7 +46,7 @@ type Database struct {
 
 var db *Database
 
-func GetDBSettings() *Database {
+func DBSettings() *Database {
 	if err := conf.UnmarshalKey("database", &db); err != nil {
 		log.Fatal("get DB settings error=>", err)
 	}

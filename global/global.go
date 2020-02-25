@@ -12,12 +12,13 @@ import (
 
 //定义一些全局变量
 
-var Config = config.GetConfig()
-var DBConfig = config.GetDBSettings()
-var DB = db.GetDB()
-var Cache = cache.GetCacheClient()
-var Logger = utils.Logger{}.GetGinLogger()
-var DBLogger = utils.Logger{}.GetGormLogger()
+var (
+	Config   = config.Config()
+	DBConfig = config.DBSettings()
+	DB       = db.GetDB()
+	Cache    = cache.CacheClient()
+	Logger   = utils.Logger{}.GinLogger()
+)
 
 var SetSession = func(ctx *gin.Context, key, value interface{}) {
 	session := sessions.Default(ctx)

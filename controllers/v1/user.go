@@ -93,6 +93,6 @@ var UserLogin = func(ctx *gin.Context) {
 var TestRedis = func(ctx *gin.Context) {
 	ctx.AsciiJSON(http.StatusOK, map[string]string{
 		"key":   "test1",
-		"value": cache.GetCacheClient().Client.Get("test1").Val(),
+		"value": cache.CacheClient().Client.Get("test1").Val(),
 	})
 }

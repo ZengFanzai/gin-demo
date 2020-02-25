@@ -127,11 +127,11 @@ func (log Logger) SetGinLogger() gin.HandlerFunc {
 	}
 }
 
-func (log Logger) GetGinLogger() *logrus.Logger {
+func (log Logger) GinLogger() *logrus.Logger {
 	return ginLogger
 }
 
-func (log Logger) GetGormLogger() *logrus.Logger {
+func (log Logger) GormLogger() *logrus.Logger {
 	return gormLogger
 }
 

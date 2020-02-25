@@ -19,11 +19,11 @@ func init() {
 }
 
 func initDB() {
-	dbLogger := utils.Logger{}.GetGormLogger()
+	dbLogger := utils.Logger{}.GormLogger()
 	url := "{{.UserName}}:{{.Password}}@tcp({{.Addr}})/{{.DBName}}?charset={{.Charset}}&parseTime=true"
 	dbTemplate, _ := template.New("dbUrl").Parse(url)
 	dbconf := bytes.Buffer{}
-	err := dbTemplate.Execute(&dbconf, config.GetDBSettings())
+	err := dbTemplate.Execute(&dbconf, config.DBSettings())
 	if err != nil {
 		dbLogger.Panic("配置模板失败->", err)
 	}
